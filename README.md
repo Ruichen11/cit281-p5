@@ -48,6 +48,13 @@ monsterGame.playGame();
 ```
 
 p5-monster-game.js 
+
+- The file is a code module with a MonsterGame class.
+- The class constructor accepts an object with initial game values, and creates the initial list of monsters.
+- The listMonsters() method will list each of the monsters to the console (see screen capture below). You will write this method, and must use forEach() Array method, and template literal.
+- The createMonsters() method creates an array of monster objects using the Monster class from the p5-monster.js code module.
+- The playGame() method plays the game, allowing each monster to randomly drain life after a specific interval of time has elapsed, and repeats until all monsters have died. This method uses concepts that will be discussed later, including Promises and async/await.
+
 ```
 // Required code modules
 const Monster = require("./p5-monster.js");
@@ -137,6 +144,25 @@ function sleep(ms) {
 }
 ```
 p5-monster.js
+
+- This file contains the Monster class.
+- Tip: Look at the p5-monster-game.js file to see how to export a class from a code module, and the p5.js file to see how to import a class from a code module.
+- You will need to look at the use of the Monster class in the p5-monster-game.js file to see how you will need to code your class, including the class constructor and methods, and will include the following class methods:
+- constructor():
+ - Accepts an object parameter, deconstructs the object into the following variables and matching this class properties, with the specified default values
+ monsterName, defaults to "Unknown".
+minimumLife, defaults to 0, represents the minimum life value for the monster to be considered alive.
+currentLife, defaults to 100, represents the current life value that when decreases below minimumLife indicates the monster has died.
+The constructor MUST accept an object, and use parameter object deconstruction to extract the parameter variables, and default object values, as specified
+Sets the this class property isAlive to either true or false, depending on if the monster's currentLife >= minimumLife.
+The setting of isAlive MUST use a single line of code to set the initial Boolean value based on currentLife >= minimumLife.
+updateLife():
+Accepts an integer, lifeChangeAmount, that represents the amount of life change, either positive or negative. If the monster currentLife amount drops below 0, set the currentLife to 0. If currentLife < minimumLife, set isAlive to true.
+Your code MUST not use  any if() statements, using one line statement constructions, such as the ternary operator ( ? : ).
+randomLifeDrain():
+Accepts two integers, minimumLifeDrain and maximumLifeDrain, where mimimumLifeDrain must be < maximumLifeDrain
+Calls updateLife() class method to deduct a randomly generated integer between minimumLifeDrain and maximumLifeDrain using getRandomInteger() method used in previous labs and projects. Don't forget to add one to maximumLifeDrain before calling getRandomInteger().
+Your code must use a template literal for any console.log() statements.
 ```
 module.exports = class Monster {
   constructor({ monsterName = "Unknown", minimumLife = 0, currentLife = 100 }) {
