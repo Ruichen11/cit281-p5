@@ -1,4 +1,4 @@
-# cit281-p5 
+# CIT281 Project-5
 ![wallpaperCIT](https://user-images.githubusercontent.com/84296093/120629913-2a6ed600-c41b-11eb-99f2-8a5f56329ffb.jpg)
 Purpose of this Project:
 - Creating a Monster Game program using classes. This game will create monsters with initial life values, and minimum life values for the monster to be alive. Once the game is running, each monster's life will be drained by a random amount, and the game will continue until all of the monsters have died. The game will include a delay before each life drain.
@@ -198,3 +198,4 @@ function getRandomInteger(min, max) {
 ```
 ![Monster game](https://user-images.githubusercontent.com/84296093/120629944-33f83e00-c41b-11eb-9523-a7dc953e8b36.JPG)
 
+[SourceCode](https://ruichen11.github.io/Ruichen11.CIT-Minor/)
